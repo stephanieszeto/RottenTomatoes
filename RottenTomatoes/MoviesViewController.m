@@ -12,12 +12,16 @@
 #import "MovieCell.h"
 #import "UIKit+AFNetworking.h"
 #import "SVProgressHUD.h"
+#import "AFNetworking.h"
+#import "Reachability.h"
 
 @interface MoviesViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *moviesArray;
 @property (nonatomic, strong) NSMutableArray *movies;
+@property (weak, nonatomic) IBOutlet UIView *errorBox;
+@property (weak, nonatomic) IBOutlet UILabel *errorText;
 
 @end
 
@@ -54,9 +58,12 @@
     [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:refreshControl];
     
+    // by default, hide network error message
+    [self.errorText setHidden:YES];
+    [self.errorBox setHidden:YES];
+    
     // load data from Rotten Tomatoes
     [self loadMovies];
-    
 }
 
 - (void)loadMovies {
@@ -96,6 +103,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    Reachability *reach = [Reachability reachabilityWithHostName: @"api.rottentomatoes.com"];
+    NetworkStatus status = [reach currentReachabilityStatus];
+    
+    if (status == NotReachable) {
+        [self.errorBox setHidden:NO];
+        [self.errorText setHidden:NO];
+    } else {
+        [self.errorBox setHidden:YES];
+        [self.errorText setHidden:YES];
+    }
+    
     static NSString *CellIdentifier = @"MovieCell";
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
@@ -103,7 +121,6 @@
     
     // configure cell
     cell.title.text = [NSString stringWithFormat:@"%@", movie.title];
-    
     cell.synopsis.text = [NSString stringWithFormat:@"%@", movie.synopsis];
     cell.synopsis.lineBreakMode = NSLineBreakByTruncatingTail;
     cell.synopsis.numberOfLines = 3;

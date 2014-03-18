@@ -13,6 +13,8 @@
 		900B58A718D6193D003C28C5 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 900B58A618D6193D003C28C5 /* MovieCell.xib */; };
 		90991CFB18D6471800DC0F45 /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90991CF918D6471800DC0F45 /* MovieViewController.m */; };
 		90991CFC18D6471800DC0F45 /* MovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90991CFA18D6471800DC0F45 /* MovieViewController.xib */; };
+		90991CFF18D8299900DC0F45 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 90991CFE18D8299900DC0F45 /* Reachability.m */; };
+		90991D0118D82A1100DC0F45 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90991D0018D82A1100DC0F45 /* SystemConfiguration.framework */; };
 		90DC4E4A18D2854F00D431CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90DC4E4918D2854F00D431CF /* Foundation.framework */; };
 		90DC4E4C18D2854F00D431CF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90DC4E4B18D2854F00D431CF /* CoreGraphics.framework */; };
 		90DC4E4E18D2854F00D431CF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90DC4E4D18D2854F00D431CF /* UIKit.framework */; };
@@ -48,6 +50,9 @@
 		90991CF818D6471800DC0F45 /* MovieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieViewController.h; sourceTree = "<group>"; };
 		90991CF918D6471800DC0F45 /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 		90991CFA18D6471800DC0F45 /* MovieViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieViewController.xib; sourceTree = "<group>"; };
+		90991CFD18D8299900DC0F45 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		90991CFE18D8299900DC0F45 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		90991D0018D82A1100DC0F45 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		90DC4E4618D2854F00D431CF /* RottenTomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RottenTomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90DC4E4918D2854F00D431CF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		90DC4E4B18D2854F00D431CF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -76,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90991D0118D82A1100DC0F45 /* SystemConfiguration.framework in Frameworks */,
 				90DC4E4C18D2854F00D431CF /* CoreGraphics.framework in Frameworks */,
 				90DC4E4E18D2854F00D431CF /* UIKit.framework in Frameworks */,
 				90DC4E4A18D2854F00D431CF /* Foundation.framework in Frameworks */,
@@ -135,6 +141,7 @@
 		90DC4E4818D2854F00D431CF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				90991D0018D82A1100DC0F45 /* SystemConfiguration.framework */,
 				90DC4E4918D2854F00D431CF /* Foundation.framework */,
 				90DC4E4B18D2854F00D431CF /* CoreGraphics.framework */,
 				90DC4E4D18D2854F00D431CF /* UIKit.framework */,
@@ -152,6 +159,8 @@
 				90DC4E7A18D4CC9700D431CF /* MoviesViewController.xib */,
 				90991CF818D6471800DC0F45 /* MovieViewController.h */,
 				90991CF918D6471800DC0F45 /* MovieViewController.m */,
+				90991CFD18D8299900DC0F45 /* Reachability.h */,
+				90991CFE18D8299900DC0F45 /* Reachability.m */,
 				90991CFA18D6471800DC0F45 /* MovieViewController.xib */,
 				900B58A318D618FE003C28C5 /* MovieCell.h */,
 				900B58A418D618FE003C28C5 /* MovieCell.m */,
@@ -331,6 +340,7 @@
 				90DC4E7B18D4CC9700D431CF /* MoviesViewController.m in Sources */,
 				90991CFB18D6471800DC0F45 /* MovieViewController.m in Sources */,
 				900B58A518D618FE003C28C5 /* MovieCell.m in Sources */,
+				90991CFF18D8299900DC0F45 /* Reachability.m in Sources */,
 				90DC4E5A18D2855000D431CF /* AppDelegate.m in Sources */,
 				900B58A218D596C5003C28C5 /* Movie.m in Sources */,
 				90DC4E5618D2854F00D431CF /* main.m in Sources */,
